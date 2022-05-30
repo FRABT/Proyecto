@@ -2,11 +2,11 @@
 # MODIFICAR ANTES DE ENTREGAR!!!!
 - Clonar el proyecto y cambiar de rama
 ```bash
-git clone https://github.com/coder-live-class/django-coderhouse-project.git
+git clone https://github.com/FRABT/Proyecto.git
 
-cd django-coderhouse-project 
+cd Proyecto
 
-git checkout class_20
+git checkout master
 
 ```
 
@@ -28,7 +28,7 @@ pip install Django
 
 - Crear base de datos con los Modelos (hacer migraciones y migrar)
 ```bash
-python manage.py makemigrations app_coder
+python manage.py makemigrations app_blog
 
 python manage.py migrate
 ```
@@ -41,4 +41,20 @@ python manage.py createsuperuser
 - Ejecutar proyecto
 ```bash
 python manage.py runserver
+```
+
+- Navegar en la web
+```bash
+Ingresar a:
+    http://127.0.0.1:8000/app_blog
+
+    Los formularios para insertar datos en:
+        
+        Clase User: Entrar a User >>> Create User
+        Clase Blog: Entrar a Blog >>> Create Blog
+        Clase Comment: Entrar a Comment >>> Create Comment
+
+    El formulario para buscar elgo en la BD(En este caso en la Clase User):
+
+        Entrar a User >>> Search User
 ```
