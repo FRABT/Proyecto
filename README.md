@@ -1,5 +1,5 @@
 # Instrucciones para ejecutar este proyecto
-# MODIFICAR ANTES DE ENTREGAR!!!!
+
 - Clonar el proyecto y cambiar de rama
 ```bash
 git clone https://github.com/FRABT/Proyecto.git
