@@ -8,12 +8,12 @@ class UserForm(forms.Form):
 
 
 class BlogForm(forms.Form):
-    date = forms.DateField(label='Blog_Date')
-    title = forms.CharField(max_length=50, min_length=10, label='Blog_Title')
-    body = forms.CharField(max_length=500, label='Blog_Body')
+    date = forms.DateField(label='Date')
+    title = forms.CharField(max_length=50, min_length=10, label='Title')
+    body = forms.CharField(max_length=500, label='Body')
 
 
 class CommentForm(forms.Form):
-    date = forms.DateField(label='Comment_Date')
-    title = forms.CharField(max_length=50, min_length=10, label='Comment_Title')
-    body = forms.CharField(max_length=500, label='Comment_Body')
+    date = forms.DateField(label='Date')
+    title = forms.CharField(max_length=50, min_length=10, label='Title')
+    body = forms.CharField(max_length=500, label='Body')

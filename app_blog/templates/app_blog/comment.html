@@ -2,11 +2,13 @@
 {% load static %}
 {% block app_blog_content %}
 
-<h2> COMENTARIOS </h2>
-<hr></hr>
+<h2> COMMENTS </h2>
 
-<ul>
-    <!--Mostrar los datos del comment--->
-</ul>
+<a class="card_custom" href="{% url 'app_blog:CommentForm' %}">Create comment</a>
 
+<div class="text-lg-start bg-dark text-white">
+    <ul>
+        <!--Mostrar los datos del blog--->
+    </ul>
+</div>
 {% endblock %}

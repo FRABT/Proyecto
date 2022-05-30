@@ -1,3 +1,4 @@
+from turtle import title
 from django.shortcuts import render
 from app_blog.models import User, Blog, Comment
 from app_blog.forms import UserForm, BlogForm, CommentForm
@@ -100,5 +101,75 @@ def user_search(request):
     return render(
         request=request,
         context=context_dict,
-        template_name="app_blog/user_search.html",
+        template_name="app_blog/search_form.html",
+    )
+
+
+def search_form(request):
+    return render(request, "app_blog/search_form.html")
+
+
+def blog_forms_view(request):
+    if request.method == 'POST':
+        blog_form = BlogForm(request.POST)
+        if blog_form.is_valid():
+            data = blog_form.cleaned_data
+            blog = Blog(
+                date=data['date'],
+                title=data['title'],
+                body=data['body'],
+            )
+            blog.save()
+
+            blogs = Blog.objects.all()
+            context_dict = {
+                'blogs': blogs
+            }
+            return render(
+                request=request,
+                context=context_dict,
+                template_name="app_blog/blog.html"
+            )
+
+    blog_form = BlogForm(request.POST)
+    context_dict = {
+        'blog_form': blog_form
+    }
+    return render(
+        request=request,
+        context=context_dict,
+        template_name='app_blog/blog_forms.html'
+    )
+
+
+def comment_forms_view(request):
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            data = comment_form.cleaned_data
+            comment = Comment(
+                date=data['date'],
+                title=data['title'],
+                body=data['body'],
+            )
+            comment.save()
+
+            comments = Blog.objects.all()
+            context_dict = {
+                'comments': comments
+            }
+            return render(
+                request=request,
+                context=context_dict,
+                template_name="app_blog/comment.html"
+            )
+
+    comment_form = CommentForm(request.POST)
+    context_dict = {
+        'comment_form': comment_form
+    }
+    return render(
+        request=request,
+        context=context_dict,
+        template_name='app_blog/comment_forms.html'
     )

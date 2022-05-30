@@ -3,7 +3,7 @@
 {% block app_blog_content %}
 
 <h2> Search User </h2>
-<form action="" method="GET">
+<form action="{% url 'app_blog:UserSearch' %}" method="GET">
     <div>
         <input type="text" name="text_search" id="user_nick" placeholder="Busqueda por nick">
         <input type="submit" value="Buscar por Nick">
