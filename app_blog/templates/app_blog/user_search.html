@@ -1,0 +1,29 @@
+{% extends "app_blog/index.html" %}
+{% load static %}
+{% block app_blog_content %}
+
+<h2> Search User </h2>
+<form action="" method="GET">
+    <div>
+        <input type="text" name="text_search" id="user_nick" placeholder="Busqueda por nick">
+        <input type="submit" value="Buscar por Nick">
+    </div>
+    <div>
+        <input type="email" name="email_search" id="user_email" placeholder="Busqueda por email">
+        <input type="submit" value="Buscar por email">
+    </div>
+
+</form>
+
+{% if users %}
+    <ul>
+        {% for user in users %}
+            <li>
+                User: {{user.nick}}
+                -- Email: {{user.email}}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock %}

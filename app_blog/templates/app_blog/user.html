@@ -1,0 +1,17 @@
+{% extends "app_blog/index.html" %}
+{% load static %}
+{% block app_blog_content %}
+
+<h2> User information </h2>
+<a class="card_custom" href="{% url 'app_blog:UserForm' %}">Register user</a>
+<div class="bg-dark text-white text-center">
+    <a class="card_custom" href="{% url 'app_blog:UserSearch' %}">Search user</a>   
+</div>
+
+<div class="text-lg-start bg-dark text-white">
+    <ul>
+        <!--Mostrar los datos del user--->
+    </ul>
+</div>
+
+{% endblock %}
